@@ -3,7 +3,7 @@ import LogItem from './LogItem';
 import { connect } from 'react-redux'
 import Preloader from '../layout/Preloader';
 import PropTypes from 'prop-types'
- import getLogs from '../../actions/logActions'
+ import { getLogs } from '../../actions/logActions';
 
 
   const Logs = ({ log: { logs,loading }, getLogs}) => {
@@ -29,7 +29,7 @@ import PropTypes from 'prop-types'
                <h4 className ="center">System Logs</h4>
            </li>
 
-           {!loading || logs.length ===null? (<p className="center">No logs to Show .....</p>) :
+           {!loading || logs.length === 0 ? (<p className="center">No logs to Show .....</p>) :
 
             (
             logs.map(log => <LogItem log={log} key={log.id} />)

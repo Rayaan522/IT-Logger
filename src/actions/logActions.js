@@ -21,7 +21,7 @@ import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS,ADD_LOG } from './Types';
         
     } catch (err) {
     
-        dispatch({
+       return dispatch({
             type:LOGS_ERROR,
             payload:err.response.data
         })
@@ -53,14 +53,15 @@ import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS,ADD_LOG } from './Types';
         });
         const data = await res.json();
     
-        dispatch({
+         dispatch({
             type:ADD_LOG,
             payload:data
         })
         
     } catch (err) {
+        
     
-        dispatch({
+         dispatch({
             type:LOGS_ERROR,
             payload:err.response.data
         })
@@ -100,5 +101,4 @@ export const setLoading = () => {
 
 
 
-// export default getLogs ;
-export default (getLogs,addLog);
+ 
