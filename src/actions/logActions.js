@@ -1,12 +1,11 @@
-import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS } from './Types';
+import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS,ADD_LOG } from './Types';
 
-import React from 'react'
 
- export  const logActions = () => {
+ 
      
 
         // Get logs from Server
-  const  getLogs = () => async dispatch => {
+  export const  getLogs = () => async dispatch => {
 
     try {
     
@@ -34,17 +33,55 @@ import React from 'react'
     
     }
  
+
+          // Add  a new log 
+  export const  addLog = (log) => async dispatch => {
+
+    try {
+    
+        setLoading();
+       
+        const res = await fetch('/logs',{
+
+            method:'POST',
+            body:JSON.stringify(log),
+            headers : {
+               'Content-Type':'application/json'
+            }
+             
+
+        });
+        const data = await res.json();
+    
+        dispatch({
+            type:ADD_LOG,
+            payload:data
+        })
+        
+    } catch (err) {
+    
+        dispatch({
+            type:LOGS_ERROR,
+            payload:err.response.data
+        })
+        
+    }
+        
+    
+        
+    
+    }
   
 
 // set loading to true
-const setLoading = () => {
+export const setLoading = () => {
     return {
         type:SET_LOADING 
     }
 }
 
      
-}
+ 
 // export const getLogs = () => {
 //     return async dispatch => {
 //         setLoading();
@@ -63,4 +100,5 @@ const setLoading = () => {
 
 
 
-export default logActions;
+// export default getLogs ;
+export default addLog;

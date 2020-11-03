@@ -28,7 +28,7 @@ import PropTypes from 'prop-types'
                <h4 className ="center">System Logs</h4>
            </li>
 
-           {!loading || logs === null ? (<p className="center">No logs to Show .....</p>) :
+           {!loading && logs.length === 0 ? (<p className="center">No logs to Show .....</p>) :
 
             (
             logs.map(log => <LogItem log={log} key={log.id} />)
@@ -44,6 +44,7 @@ import PropTypes from 'prop-types'
 Logs.propTypes = {
 
     log: PropTypes.object.isRequired,
+    getLogs: PropTypes.func.isRequired,
 
 }
 

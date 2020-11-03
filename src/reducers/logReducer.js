@@ -1,4 +1,5 @@
-import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS } from '../actions/Types';
+import { act } from 'react-dom/test-utils';
+import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS,ADD_LOG } from '../actions/Types';
 
 
 const initialState = {
@@ -16,6 +17,12 @@ export default (state = initialState,action) => {
                 logs:action.payload,
                 loading:false
             }
+            case ADD_LOG :
+                return {
+                    ...state,
+                    logs:[...state.logs,action.payload],
+                    loading:false
+                }
 
         case SET_LOADING :
             return {
@@ -23,13 +30,11 @@ export default (state = initialState,action) => {
                 loading:true
             }
         case LOGS_ERROR :
-            console.error(action.payload) ;
+            console.error(action.payload);
             return {
                 ...state,
-                error:action.payload,
-                loading:false
-            }   
+                error:action.payload
+                }   
         default :
-        return state;
     }
 }
