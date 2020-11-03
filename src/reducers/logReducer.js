@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils';
 import  { GET_LOADING,SET_LOADING,LOGS_ERROR, GET_LOGS,ADD_LOG } from '../actions/Types';
 
 
@@ -36,5 +35,6 @@ export default (state = initialState,action) => {
                 error:action.payload
                 }   
         default :
+        return state;
     }
 }

@@ -101,4 +101,4 @@ export const setLoading = () => {
 
 
 // export default getLogs ;
-export default addLog;
+export default (getLogs,addLog);

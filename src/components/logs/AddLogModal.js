@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import M from 'materialize-css/dist/js/materialize.min.js';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import addLog from '../../actions/logActions'
+import { addLog } from '../../actions/logActions'
 
 
 export const AddLogModal = ({ addLog }) => {
@@ -24,7 +24,7 @@ const onsubmit = () => {
         }
         addLog(newLog);
 
-        M.toast({ html: `log added by ${tech}` });
+        M.toast({ html: `Log added by ${tech}` });
      
 
     // Clear fields
