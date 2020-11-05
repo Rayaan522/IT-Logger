@@ -1,27 +1,26 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
-      "attention": true,
-      "date": "03-02-2019",
-      "tech": "John Doe"
-    },
-    {
       "id": 3,
-      "message": "Changed memory on workstation 050",
+      "message": "work station drive changed",
       "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sara Wilson"
+      "tech": "John Doe",
+      "date": "2020-11-04T16:37:54.233Z"
+    },
+    {
+      "id": 4,
+      "message": "Fixed Work Station Problem",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2020-11-04T10:23:23.523Z"
+    },
+    {
+      "id": 5,
+      "message": "work station not posting 007",
+      "attention": true,
+      "tech": "Sam Smith",
+      "date": "2020-11-04T10:23:54.011Z"
     }
-     
   ],
   "techs": [
     {
